@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="./assets/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/game.css">
     <script src="https://code.createjs.com/easeljs-0.8.2.min.js"></script>
     <script src="https://code.createjs.com/tweenjs-0.6.2.min.js"></script>
     <script type="application/javascript" src="lib/bundle.js"></script>
@@ -8,21 +10,11 @@
     <title></title>
   </head>
   <body>
-    <h1>Feed The Cat..</h1>
-    <canvas id="demoCanvas" width="900" height="400"></canvas>
+    <div class="board">
+      <h1>Feed The Cat..</h1>
+      <canvas id="demoCanvas" width="1000" height="400"></canvas>
+        <input type="button" style="z-index:2; position:absolute; top:100; left:500" value="test"/>
+    </div>
+
   </body>
 </html>
-
-
-<!--
-<script>
-function init() {
-  var stage = new createjs.Stage("demoCanvas");
-  var circle = new createjs.Shape();
-  circle.graphics.beginFill("DeepSkyBlue").drawCircle(0, 0, 50);
-  circle.x = 100;
-  circle.y = 100;
-  stage.addChild(circle);
-  stage.update();
-}
-</script> -->
