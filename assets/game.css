@@ -9,3 +9,14 @@ div.box {
   border: 1px solid black;
   display: flex;
 }*/
+
+.score-box {
+  position: absolute;
+  border:1px solid black;
+  background-color: white;
+  height:100px;
+  width:20px;
+  top:300px;
+  left:800px;
+  z-index: 1;
+}
