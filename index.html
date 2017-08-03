@@ -3,6 +3,7 @@
   <head>
     <link rel="stylesheet" type="text/css" href="./assets/reset.css" />
     <link rel="stylesheet" type="text/css" href="./assets/game.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://code.createjs.com/easeljs-0.8.2.min.js"></script>
     <script src="https://code.createjs.com/tweenjs-0.6.2.min.js"></script>
     <script type="application/javascript" src="lib/bundle.js"></script>
@@ -13,8 +14,8 @@
     <div class="board">
       <h1>Feed The Cat..</h1>
       <canvas id="demoCanvas" width="1000" height="400"></canvas>
-        <input type="button" style="z-index:2; position:absolute; top:380px; left:820px" value="Start"/>
-        <input type="button" style="z-index:2; position:absolute; top:380px; left:880px" value="Mute"/>
+        <input id="restart-button" type="button" value="Restart">
+        <input id="mute-button" type="button" value="Mute">
     </div>
 
   </body>

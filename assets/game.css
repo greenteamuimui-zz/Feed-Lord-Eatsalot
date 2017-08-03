@@ -20,3 +20,17 @@ div.box {
   left:800px;
   z-index: 1;
 }
+
+#restart-button {
+  z-index: 2;
+  position: absolute;
+  top: 380px;
+  left: 820px
+}
+
+#mute-button {
+  z-index: 2;
+  position: absolute;
+  top: 380px;
+  left: 880px
+}
