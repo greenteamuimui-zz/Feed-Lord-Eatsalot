@@ -1,25 +1,10 @@
-/*div.board {
-  border: 1px solid black;
+div.board {
+  /*border: 1px solid black;*/
   display: flex;
+  justify-content: center;
+  margin: auto;
 }
 
-div.box {
-  width:100px;
-  height:400px;
-  border: 1px solid black;
-  display: flex;
-}*/
-
-.score-box {
-  position: absolute;
-  border:1px solid black;
-  background-color: white;
-  height:100px;
-  width:20px;
-  top:300px;
-  left:800px;
-  z-index: 1;
-}
 
 #restart-button {
   z-index: 2;
@@ -33,4 +18,49 @@ div.box {
   position: absolute;
   top: 380px;
   left: 880px
+}
+
+.modal {
+    visibility: visible;
+    position: fixed; /* Stay in place */
+    z-index: 3; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%; /* Could be more or less, depending on screen size */
+}
+
+.win-modal {
+    visibility: hidden;
+    position: fixed; /* Stay in place */
+    z-index: 3; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.lose-modal {
+    visibility: hidden;
+    position: fixed; /* Stay in place */
+    z-index: 3; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }

@@ -11,11 +11,27 @@
     <title></title>
   </head>
   <body>
+    <h1>Feed The Cat..</h1>
     <div class="board">
-      <h1>Feed The Cat..</h1>
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <input id="start-button" type="button" value="Start"/>
+          <p>Some text in the Modal..</p>
+        </div>
+      </div>
+      <div id="winningModal" class="win-modal">
+        <div class="modal-content">
+          <p>Awesome! Time for some donuts right?</p>
+        </div>
+      </div>
+      <div id="losingModal" class="lose-modal">
+        <div class="modal-content">
+          <p>Try Again, I really want some donuts!</p>
+        </div>
+      </div>
       <canvas id="demoCanvas" width="1000" height="400"></canvas>
-        <input id="restart-button" type="button" value="Restart">
-        <input id="mute-button" type="button" value="Mute">
+        <input id="restart-button" type="button" value="Restart"/>
+        <input id="mute-button" type="button" value="Mute"/>
     </div>
 
   </body>
