@@ -1,0 +1,226 @@
+div.board {
+  /*border: 1px solid black;*/
+  display: flex;
+  justify-content: center;
+  margin-top:5%;
+  padding: 20px;
+}
+
+h4 {
+  margin: auto;
+  text-align: center;
+  font-size: 45px;
+  font-style: italic;
+  padding: 10px;
+}
+
+body {
+  background-color: white;
+  /*background-size: 1200px 1000px;*/
+  background-image: url("./images/rainbow5.png");
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+
+.canvas {
+  /*border: 1px solid red;*/
+  position: relative;
+}
+
+i.material-icons {
+  transform: rotateX(60deg);
+  font-size:40px;
+  line-height: 0.6;
+}
+
+i#big-i {
+  transform: rotateX(60deg);
+  font-size:90px;
+  line-height: 0.6;
+}
+
+h1 {
+  margin: auto;
+  text-align: center;
+  font-size: 30px;
+  font-style: italic;
+  padding: 10px;
+}
+
+h3{
+  top: 400px;
+  position: absolute;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.text-box {
+  /*border: 1px solid black;*/
+  width:400px;
+  margin: auto;
+}
+
+.text-box-1 {
+  width: 250px;
+  position: absolute;
+  top: 200px;
+  left: 170px;
+  line-height: 30px;
+  text-align: right;
+}
+
+p {
+  text-align: justify;
+  padding: 10px;
+}
+
+#start-button {
+  z-index: 2;
+  position: absolute;
+  top: 440px;
+  left: 200px;
+  height: 60px;
+  width: 100px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: white;
+  background-color: #ff8b00;
+  border: 1px solid white;
+  border-radius: 50%;
+  box-shadow: 0px 4px black;
+  font-size: 30px;
+  font-family: Quantico, serif;
+}
+
+#start-button:hover {background-color: #FF6A00}
+
+#start-button:active {
+  background-color: #FF6A00;
+  box-shadow: 0px 0px darkred;
+  transform: translateY(4px);
+}
+
+#restart-button {
+  z-index: 2;
+  position: absolute;
+  top: 410px;
+  left: 830px;
+  /*padding: 5px 10px;*/
+  height: 30px;
+  width: 65px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: white;
+  background-color: #FF6A00;
+  border: 1px solid white;
+  border-radius: 50%;
+  box-shadow: 0px 3px black;
+  font-family: Quantico, serif;
+}
+
+#restart-button:hover {background-color: #FF6A00}
+
+#restart-button:active {
+  background-color: #FF6A00;
+  box-shadow: 0px 0px darkred;
+  transform: translateY(4px);
+}
+
+#mute-button {
+  z-index: 2;
+  position: absolute;
+  top: 410px;
+  left: 910px;
+  height: 30px;
+  width: 65px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: white;
+  background-color: #FE1B1B;
+  border: 1px solid white;
+  border-radius: 50%;
+  box-shadow: 0px 3px black;
+  font-family: Quantico, serif;
+}
+
+#mute-button:hover {background-color: #FE1B1B}
+
+#mute-button:active {
+  background-color: red;
+  box-shadow: 0px 0px #FE1B1B;
+  transform: translateY(4px);
+}
+.modal {
+    visibility: visible;
+    position: fixed; /* Stay in place */
+    z-index: 3; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: white;
+    /*background-color: rgba(0,0,0,0); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    position: relative;
+    margin: auto;
+    margin-top:10%;
+    padding: 20px;
+    width: 1000px;
+    height:500px;
+    background-image: url('./images/modal.png');
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+.win-modal {
+    visibility: hidden;
+    position: fixed; /* Stay in place */
+    z-index: 3; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.lose-modal {
+    visibility: hidden;
+    position: fixed; /* Stay in place */
+    z-index: 3; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.links {
+  position: absolute;
+  top: 80px;
+  left: 810px;
+  display: flex;
+  justify-content: center;
+  /*border: 1px solid black;*/
+  /*padding: 10px;*/
+}
+
+img {
+  padding: 20px;
+  z-index: 2;
+  width:50px;
+  height:50px;
+}
+
+.canvas {
+
+}
