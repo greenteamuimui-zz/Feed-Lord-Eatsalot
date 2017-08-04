@@ -7,7 +7,7 @@
 [Feed Lord Eatsalot][live] is a 2D game, where the player's goal is to feed the pet cat snacks in the right order displayed on the right hand panel in a certain amount of time. Various type of snacks will fall from the sky where the player can move the cat left and right to catch and eat the falling snacks. As the player progress in the game and level up, the frequency and speed of the falling snacks, time remaining and number of snacks wanted will change. The player lose if he/she cannot get all the snacks in the 60 seconds or if the cat ate the three wrong snacks.
 
 
-[live]: https://garyeh.github.io/EndlessRevolution/endless.html
+[live]: https://greenteamuimui.github.io/Feed-Lord-Eatsalot/
 
 ### GamePlay
 
