@@ -1,73 +1,103 @@
-## Feed The Cat
+## Endless Revolution
 
 ### Background
 
-Feed The Cat is a 2D game, where the player's goal is to feed the pet cat snacks in the right order displayed on the right hand panel in a certain amount of time. Various type of snacks will fall from the sky where the player can move the cat left and right to catch and eat the falling snacks. As the player progress in the game and level up, the frequency and speed of the falling snacks, time remaining and number of snacks wanted will change. The player lose if he/she cannot get all the snacks in the set time or if the cat ate the three wrong snacks.
+![gameintro](docs/gameintro.png)
 
-### Functionality & MVP
-
-This implementation will allow users to:
-
-- [ ] Control the cat from going left to right
-- [ ] Checking for colliding of objects(Cat and snack)
-- [ ] Check for the right order of snacks
-- [ ] Render different emotions of the cats based on the player's progress
-
-In addition, this project will include:
-
-- [ ] A fun introdution modal for the user
-- [ ] A production Readme
-
-### Wireframes
-
-This app will consist of a single screen with a game canvas divided into two parts. The major area on the left is where the player controls the cat and interact with the falling snacks. The left panel will diplay the order needed to be matched, links to my Github, my LinkedIn and the current level and start button. The player will have the option to start the game and mute the sound effects along the game.
-
-![wireframe](./assets/images/Feed_The_Cat.png)
-
-### Architecture and Technologies
-
-This project will be implmemented with the following technologies:
-- Vanilla JavaScript and `jquery` for overall structure and game logic.
-- `Easel.js` with `HTML5 Canvas` for DOM manipulation and rendering.
-- Keymaster.js to set arrow keys for player movement
-- Webpack to bundle and serve up the various scripts.
-
-In addition to the webpack entry file, there will be other scripts involved in the project:
-
-`main.js`: this script will handle the logic for creating and updating the necessary `Easel.js` elements and rendering them to the DOM.
-
-`game.js`: this script will handle the game logic. It will keep track of the order of the snacks, the time remaining and spawn snacks from the sky falling.
-
-`snacks.js`: this script will set up the base functionality for the falling snacks.
-
-`cat.js`: this script will house the constructor and moving functions for the cat object.
+[Feed Lord Eatsalot][live] is a 2D game, where the player's goal is to feed the pet cat snacks in the right order displayed on the right hand panel in a certain amount of time. Various type of snacks will fall from the sky where the player can move the cat left and right to catch and eat the falling snacks. As the player progress in the game and level up, the frequency and speed of the falling snacks, time remaining and number of snacks wanted will change. The player lose if he/she cannot get all the snacks in the 60 seconds or if the cat ate the three wrong snacks.
 
 
-### Implementation Timeline
+[live]: https://garyeh.github.io/EndlessRevolution/endless.html
 
-**Day 1**: Setup all necessary Node modules, including getting webpack up and running and `Easel.js` installed. Write a basic entry file. Learn the basics of `Easel.js`. Goals for the day:
+### GamePlay
 
-- Setup webpack
-- Render game bacground onto `Canvas` element
+* Eat the right donut in the bottom of the stack following Lord Eatsalot's command
 
-**Day 2**: Build `Snacks` and `Cat` object. Connect `Cat` and `Snacks` object to `Game` object. Then use `main.js` to create and render cats and snacks. Build the ability to control the cat using Keymaster. Goals for the day:
+* Move right and left with your keyboard arrows to move the cat left and right to eat the falling donuts
 
-- Complete the `snacks.js` and `cat.js`
-- Render the cat and falling snack to `Canvas` using `Easel.js`
-- Make cat movable
+* Consume all the donuts in the stack in 60 seconds
 
-**Day 3**: Create the logic for the game(keep tracking snack order, what happened after collision between cat and snacks). Goals for the day:
+* If accidentally eaten a wrong donut, you lose a life
 
-- Build `Game` logic, tracking of snacks order
-- Implement game logic for cat and snacks interaction
+* Three lives in total
 
-**Day 4**: Finish up any functionality not already implemented. Style the frontend, making it polished and professional. Goals for the day:
+### Features and implementation
 
-- Style `Canvas`, nice looking controls and title.
-- Finish app
+Feed Lord Eatsalot was built on JavaScript and rendered on EaselJS.
+Keymaster.js was used for keyboard arrow interaction for users. Conatiner Class was used to store and render donuts order and hit points(hearts).
 
-### Bonus Features
+The Ticker class was implemented to allow for rich graphics and animation. At every tick, if the game was not over, the images are drawn on each tick with its updated positions.The timer is also drawn using a text object and the runTime of the tick.
 
-- [ ] Add more levels
-- [ ] Add sound effect and background music
-- [ ] Add bonus snacks and features
+```JavaScript
+startGame(event){
+  this.game.step(event.delta, this.stage);
+  this.game.draw();
+  this.drawTimer();
+  this.timer.text = `${60 - Math.floor(event.runTime/1000)} Sec`;
+  this.stage.update();
+  if (this.game.over === -1 || (60 - Math.floor(event.runtime/1000)) === 0) {
+    this.game.displayMessage(false);
+    createjs.Sound.removeSound("mySound");
+    event.remove();
+  } else if (this.game.over === 1){
+    this.game.displayMessage(true);
+    createjs.Sound.removeSound("mySound");
+    event.remove();
+  }
+}
+
+ beginGame() {
+   createjs.Ticker.setInterval(5);
+   document.onkeydown = this.handleKeyPressed;
+   createjs.Ticker.reset();
+   createjs.Ticker.on('tick', this.startGame);
+ }
+```
+
+The movingObjects class (donuts) represents a color/type of a different donut that is created randomly. The constructor function assign the donut a name based on the randomized order and then the addOrder function behaves similarly so that the checkCollisions method can check whether the names of the eaten donut and the donut-in-order are the same. When the right donut is eaten, the donuts get deleted from the appropriate container and is then rendered as a group.
+
+
+```JavaScript
+class movingObects {
+  constructor(stage) {
+    this.stage = stage;
+    this.num = Math.floor(Math.random()* 3 + 1);
+    this.snackImg = new createjs.Bitmap(`./assets/images/sm-snack${this.num}.png`);
+    this.x = Math.floor(Math.random()* (this.stage.canvas.width - 300 - 10)) + 10;
+    this.y = 10;
+    this.radius = 50;
+    this.name = `snack${this.num}`;
+  }
+  // other code
+}
+
+//  Game Class
+checkCollisions() {
+  for (let i = 0; i < this.snacks.length; i++) {
+    if (this.snacks[i].isEatenBy(this.cat)) {
+      if (this.snacks[i].name === this.snackOrder.children[0].name) {
+        this.snacks.splice(this.snacks[i], 1);
+        this.snackOrder.removeChildAt(0);
+        this.snackOrder.y = this.snackOrder.y + 25;
+        this.happyCat();
+        if (this.won()) {
+          this.over = 1;
+        }
+      } else {
+        this.snacks.splice(this.snacks[i], 1);
+        this.scores.removeChildAt(this.scores.numChildren - 1);
+        this.sadCat();
+        if (this.gameOver()) {
+          this.over = -1;
+        }
+      }
+    }
+  }
+}
+
+```
+### Future Features
+
+- [ ] Level of difficulties correlating to amount of donuts and speed   of cat and donuts
+- [ ] Bonus items that increase lives
+- [ ] Jumping action of cat to get donuts faster
