@@ -16,23 +16,52 @@ i.material-icons {
   line-height: 0.6;
 }
 
+h1 {
+  margin: auto;
+  text-align: center;
+  font-size: 30px;
+  font-style: italic;
+  padding: 10px;
+}
+
+.text-box {
+  /*border: 1px solid black;*/
+  width:400px;
+  margin: auto;
+}
+
+.text-box-1 {
+  width: 250px;
+  position: absolute;
+  top: 200px;
+  left: 170px;
+  line-height: 30px;
+  text-align: right;
+}
+
+p {
+  text-align: justify;
+  padding: 10px;
+}
+
 #start-button {
   z-index: 2;
   position: absolute;
-  top: 340px;
-  left: 830px;
-  /*padding: 5px 10px;*/
-  height: 30px;
-  width: 65px;
+  top: 430px;
+  left: 50px;
+  height: 50px;
+  width: 100px;
   text-align: center;
   cursor: pointer;
   outline: none;
   color: white;
-  background-color: #FF6A00;
+  background-color: #ff8b00;
   border: 1px solid white;
   border-radius: 50%;
   box-shadow: 0px 3px black;
+  font-size: 25px;
   font-family: Quantico, serif;
+  transform: rotateX(50deg);
 }
 
 #start-button:hover {background-color: #FF6A00}
@@ -111,6 +140,7 @@ i.material-icons {
 /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
+    position: relative;
     margin: auto; /* 15% from the top and centered */
     padding: 20px;
     width: 1000px; /* Could be more or less, depending on screen size */
