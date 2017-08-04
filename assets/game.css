@@ -113,10 +113,9 @@ i.material-icons {
     background-color: #fefefe;
     margin: auto; /* 15% from the top and centered */
     padding: 20px;
-    border: 1px solid #888;
     width: 1000px; /* Could be more or less, depending on screen size */
     height:500px;
-    background-image: url('./images/modal1.png');
+    background-image: url('./images/modal.png');
     background-repeat: no-repeat;
     background-size:cover;
 }
