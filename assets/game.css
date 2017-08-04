@@ -5,21 +5,96 @@ div.board {
   margin: auto;
 }
 
+.canvas {
+  /*border: 1px solid red;*/
+  position: relative;
+}
+
+i.material-icons {
+  transform: rotateX(60deg);
+  font-size:40px;
+  line-height: 0.6;
+}
+
+#start-button {
+  z-index: 2;
+  position: absolute;
+  top: 340px;
+  left: 830px;
+  /*padding: 5px 10px;*/
+  height: 30px;
+  width: 65px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: white;
+  background-color: #FF6A00;
+  border: 1px solid white;
+  border-radius: 50%;
+  box-shadow: 0px 3px black;
+  font-family: Quantico, serif;
+}
+
+#start-button:hover {background-color: #FF6A00}
+
+#start-button:active {
+  background-color: #FF6A00;
+  box-shadow: 0px 0px darkred;
+  transform: translateY(4px);
+}
 
 #restart-button {
   z-index: 2;
   position: absolute;
-  top: 380px;
-  left: 820px
+  top: 340px;
+  left: 830px;
+  /*padding: 5px 10px;*/
+  height: 30px;
+  width: 65px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: white;
+  background-color: #FF6A00;
+  border: 1px solid white;
+  border-radius: 50%;
+  box-shadow: 0px 3px black;
+  font-family: Quantico, serif;
+}
+
+#restart-button:hover {background-color: #FF6A00}
+
+#restart-button:active {
+  background-color: #FF6A00;
+  box-shadow: 0px 0px darkred;
+  transform: translateY(4px);
 }
 
 #mute-button {
   z-index: 2;
   position: absolute;
-  top: 380px;
-  left: 880px
+  top: 340px;
+  left: 910px;
+  height: 30px;
+  width: 65px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: white;
+  background-color: #FE1B1B;
+  border: 1px solid white;
+  border-radius: 50%;
+  box-shadow: 0px 3px black;
+  font-family: Quantico, serif;
 }
 
+#mute-button:hover {background-color: #FE1B1B}
+
+#mute-button:active {
+  background-color: red;
+  box-shadow: 0px 0px #FE1B1B;
+  transform: translateY(4px);
+}
 .modal {
     visibility: visible;
     position: fixed; /* Stay in place */
@@ -30,15 +105,18 @@ div.board {
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    /*background-image: url('./images/sky.png');*/
 }
 
 /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 60%; /* Could be more or less, depending on screen size */
+    width: 1000px; /* Could be more or less, depending on screen size */
+    height:400px;
+    background-image: url('./images/sky.png');
 }
 
 .win-modal {
@@ -63,4 +141,21 @@ div.board {
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.links {
+  position: absolute;
+  top: 5px;
+  left: 810px;
+  display: flex;
+  justify-content: center;
+  /*border: 1px solid black;*/
+  /*padding: 10px;*/
+}
+
+img {
+  padding: 20px;
+  z-index: 2;
+  width:50px;
+  height:50px;
 }

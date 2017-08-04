@@ -3,9 +3,15 @@
   <head>
     <link rel="stylesheet" type="text/css" href="./assets/reset.css" />
     <link rel="stylesheet" type="text/css" href="./assets/game.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://code.createjs.com/easeljs-0.8.2.min.js"></script>
     <script src="https://code.createjs.com/tweenjs-0.6.2.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Mouse+Memoirs" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quantico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Seymour+One" rel="stylesheet">
     <script type="application/javascript" src="lib/bundle.js"></script>
     <meta charset="utf-8">
     <title></title>
@@ -15,23 +21,21 @@
     <div class="board">
       <div id="myModal" class="modal">
         <div class="modal-content">
-          <input id="start-button" type="button" value="Start"/>
-          <p>Some text in the Modal..</p>
+          <button id="start-button" type="button" name="button">Start</button>
+          <p>Are you ready for ?</p>
         </div>
       </div>
-      <div id="winningModal" class="win-modal">
-        <div class="modal-content">
-          <p>Awesome! Time for some donuts right?</p>
-        </div>
+
+      <div class="canvas">
+        <canvas id="demoCanvas" width="1000" height="400"></canvas>
+          <div class="links">
+            <a href="https://github.com/greenteamuimui"><img src="./assets/images/github.png"/></a>
+            <a href="https://www.linkedin.com/in/cherrywylam/"><img src="./assets/images/linkedin.png"/></a>
+          </div>
+          <button id="restart-button" type="button" name="button"><i class="material-icons">refresh</i></button>
+          <button id="mute-button" type="button" name="button"><i class="material-icons">volume_mute</i></button>
       </div>
-      <div id="losingModal" class="lose-modal">
-        <div class="modal-content">
-          <p>Try Again, I really want some donuts!</p>
-        </div>
       </div>
-      <canvas id="demoCanvas" width="1000" height="400"></canvas>
-        <input id="restart-button" type="button" value="Restart"/>
-        <input id="mute-button" type="button" value="Mute"/>
     </div>
 
   </body>
